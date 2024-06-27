@@ -1,23 +1,7 @@
-import React from "react";
 import Card from "./Card";
 import { useState, useEffect } from "react";
 
-const Restaurant = () => {
-  const [restaurants, setRestaurants] = useState(null);
-
-  useEffect(() => {
-    fetch("http://localhost:3000/restaurants")
-      .then((res) => {
-        return res.json();
-      })
-      .then((response) => {
-        setRestaurants(response);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  }, []);
-
+const Restaurant = ({ restaurants }) => {
   return (
     <>
       {restaurants &&

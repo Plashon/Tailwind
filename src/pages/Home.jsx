@@ -1,12 +1,10 @@
-
-
 import React, { useState, useEffect } from "react";
+import Search from "./../component/Search";
+import Header from "./../component/Header";
+import Restaurant from "./../component/Restaurant";
+import Navbar from "../component/Navbar";
 
-import Search from "./component/Search";
-import Header from "./component/Header";
-import Restaurant from "./component/Restaurant";
-
-function App() {
+function Home() {
   const [restaurants, setRestaurants] = useState([]);
   const [filterRestaurant, setfilterRestaurant] = useState([]);
   useEffect(() => {
@@ -25,18 +23,16 @@ function App() {
 
   return (
     <>
-      <div className="container flex flex-col items-center mx-auto space-y-4">
-        <Header />
+      <div className="container flex flex-row flex-wrap items-center justify-center">
+        <Navbar />
         <Search
           restaurants={restaurants}
           setfilterRestaurant={setfilterRestaurant}
         />
-        <div className="container flex flex-row flex-wrap items-center justify-center">
-          <Restaurant restaurants={filterRestaurant} />
-        </div>
+        <Restaurant restaurants={filterRestaurant} />
       </div>
     </>
   );
 }
 
-export default App;
+export default Home;

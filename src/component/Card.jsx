@@ -1,20 +1,16 @@
 import React from "react";
-const Card = ({ img, title, type }) => {
 
+const Card = ({ img, title, type }) => {
   return (
-    <div className="card w-96 bg-base-100 shadow-xl m-2" id="card">
-      <figure className="px-10 pt-10">
-        <img
-          src={img}
-          alt={title}
-          className="rounded-xl h-fit"
-        />
+    <div className="card bg-base-100 w-96 shadow-xl m-3 h-96 " id="card">
+      <figure>
+        <img src={img} alt={title} className="rounded-xl h- w-96 h-64" />
       </figure>
-      <div className="card-body items-center text-center">
+      <div className="card-body">
         <h2 className="card-title">{title}</h2>
         <p>{type}</p>
-        <div className="card-actions">
-          <button className="btn btn-primary w-200 my-1">Visit</button>
+        <div className="card-actions justify-end">
+          <button className="btn btn-primary">Visit</button>
         </div>
       </div>
     </div>
