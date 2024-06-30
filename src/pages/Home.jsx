@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Search from "./../component/Search";
-import Header from "./../component/Header";
 import Restaurant from "./../component/Restaurant";
 import Navbar from "../component/Navbar";
 
@@ -23,8 +22,8 @@ function Home() {
 
   return (
     <>
-      <div className="container flex flex-row flex-wrap items-center justify-center">
-        <Navbar />
+    <Navbar/>
+      <div className="container flex flex-row flex-wrap mx-auto items-center justify-center">
         <Search
           restaurants={restaurants}
           setfilterRestaurant={setfilterRestaurant}
