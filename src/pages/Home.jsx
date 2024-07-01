@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Search from "./../component/Search";
 import Restaurant from "./../component/Restaurant";
-import Navbar from "../component/Navbar";
+
 
 function Home() {
   const [restaurants, setRestaurants] = useState([]);
@@ -22,7 +22,6 @@ function Home() {
 
   return (
     <>
-    <Navbar/>
       <div className="container flex flex-row flex-wrap mx-auto items-center justify-center">
         <Search
           restaurants={restaurants}

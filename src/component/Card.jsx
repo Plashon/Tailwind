@@ -1,6 +1,20 @@
 import React from "react";
+import Restaurant from "./Restaurant";
 
-const Card = ({ img, title, type }) => {
+const Card = ({ id, img, title, type }) => {
+  const handleDelete = async () => {
+    try {
+      const response = await fetch("http://localhost:3000/restaurants/"+ id, {
+        method: "DELETE",
+      });
+      if(response.ok){
+        alert("Restaurant has deleted")
+        window.location.reload();
+      }
+     } catch(error){
+      console.log(error);
+      }
+    };
   return (
     <div className="card bg-base-100 w-96 shadow-xl m-3 h-96 " id="card">
       <figure>
@@ -10,7 +24,8 @@ const Card = ({ img, title, type }) => {
         <h2 className="card-title">{title}</h2>
         <p>{type}</p>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">Visit</button>
+          <a className="btn btn-primary" href={`edit/${id}`}>Edit</a>
+          <button className="btn btn-error" onClick={()=>handleDelete(id)}>Delete</button>
         </div>
       </div>
     </div>

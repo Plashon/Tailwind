@@ -1,12 +1,11 @@
 import React from "react";
 import Header from "./Header";
-
 function Navbar() {
   return (
     <div className="navbar bg-base-100 mt-5 mb-10 mx-auto h-30 w-5/6">
       <div className="navbar-start ">
         <div className="dropdown ">
-          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle" >
+          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-7 w-7"
@@ -27,12 +26,11 @@ function Navbar() {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
             <li>
-              <a href="http://localhost:5173/" >Home page</a>
+              <a href="http://localhost:5173/">Home page</a>
             </li>
             <li>
               <a href="http://localhost:5173/add/">Add Restaurant</a>
             </li>
-           
           </ul>
         </div>
       </div>
